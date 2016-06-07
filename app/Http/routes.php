@@ -58,3 +58,15 @@ Route::resource('admin', 'AdminController');
 
 // Users
 Route::resource('users', 'UsersController');
+
+// Almacenes
+Route::resource('almacenes', 'AlmacenesController');
+
+// Categórias
+Route::resource('categorias', 'CategoriasController');
+
+// Subcategórias
+Route::resource('subcategorias', 'SubcategoriasController');
+
+// Productos
+Route::resource('productos', 'ProductosController');

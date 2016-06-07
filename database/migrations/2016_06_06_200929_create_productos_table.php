@@ -16,6 +16,8 @@ class CreateProductosTable extends Migration
             $table->increments('id');
 
             $table->string('nombre');
+            $table->integer('id_subcateg')->unsigned();
+            $table->foreign('id_subcateg')->references('id')->on('subcategorias');
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users');
 
@@ -24,14 +26,14 @@ class CreateProductosTable extends Migration
 
         Schema::create('almacen_producto', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_almacen')->unsigned();
-            $table->integer('id_producto')->unsigned();
+            $table->integer('almacen_id')->unsigned();
+            $table->integer('producto_id')->unsigned();
 
-            $table->foreign('id_almacen')
+            $table->foreign('almacen_id')
                 ->references('id')
                 ->on('almacenes')->onDelete('cascade');
 
-            $table->foreign('id_producto')
+            $table->foreign('producto_id')
                 ->references('id')
                 ->on('productos')->onDelete('cascade');
 
@@ -46,6 +48,7 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
+        Schema::drop('almacen_producto');
         Schema::drop('productos');
     }
 }

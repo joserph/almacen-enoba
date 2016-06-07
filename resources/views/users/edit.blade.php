@@ -1,4 +1,4 @@
-@extends('admin.template.layout')
+@extends('template.layout')
 
 @section('content')
  	<!-- Page Heading -->
@@ -46,9 +46,9 @@
 							{!! Form::label('role', 'Rol') !!}
 							{!! Form::select('role', [
 								'' => 'Seleccionar',
-								'user' => 'User',
-								'editor' => 'Editor',
-								'admin' => 'Admin'], $user->role,['class' => 'form-control', 'autofocus']) !!}							
+								'basico' => 'Básico',
+								'avanzado' => 'Avanzado',
+								'administrador' => 'Administrador'], $user->role,['class' => 'form-control', 'autofocus']) !!}							
 						</div>
 						
 						{!! Form::submit('Editar', ['class' => 'btn btn-warning']) !!}

@@ -7,7 +7,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">Auth System</a>
+			<a class="navbar-brand" href="/">
+                <img style="max-width:100px; margin-top: -10px;" src="{{ asset('imgs/foto.jpg') }}" alt="perfil" class="img-rounded" width="40">
+            </a>
+			<a class="navbar-brand" href="/">Almacén Enoba</a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
